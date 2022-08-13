@@ -10,6 +10,8 @@
     <RepositoryUrl>https://github.com/tonygiang/CLSS.ExtensionMethods.IComparable.ClampToRange</RepositoryUrl>
     <PackageTags>CLSS</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Version>1.1</Version>
+    <PackageReleaseNotes>- Automatically use the latest CLSS dependency version.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,7 +23,7 @@
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="CLSS.Types.ValueRange">
-      <Version>1.0.0</Version>
+      <Version>*</Version>
     </PackageReference>
   </ItemGroup>
 
