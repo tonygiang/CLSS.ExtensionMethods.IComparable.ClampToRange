@@ -4,14 +4,14 @@
 
 The process to clamp a value to a range is somewhat long:
 
-```
+```csharp
 if (value < min) value = min;
 else if (value > max) value = max;
 ```
 
 Even longer when the type of your value does not implement comparison operators:
 
-```
+```csharp
 // Type of meetingDate is System.DateTime
 if (meetingDate.CompareTo(startDate) < 0) meetingDate = startDate;
 else if (meetingDate.CompareTo(endDate) > 0) meetingDate = endDate;
@@ -23,7 +23,7 @@ The [`System.Math.Clamp`](https://docs.microsoft.com/en-us/dotnet/api/system.mat
 
 `ClampToRange` does this in a more intuitive, shorter and functional style friendly way:
 
-```
+```csharp
 using CLSS;
 
 value = value.ClampToRange(min, max);
@@ -33,7 +33,7 @@ No more short stops in your code reading to decode the meanings of comparison op
 
 `ClampToRange` has a wider range of supported types than `System.Math.Clamp`. It supports all [`IComparable`](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable?view=net-6.0) and [`IComparable<T>`](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=net-6.0) types.
 
-```
+```csharp
 using CLSS;
 
 // System.DateTime implements IComparable<T>
@@ -42,7 +42,7 @@ meetingDate = meetingDate.ClampToRange(startDate, endDate);
 
 `ClampToRange` can also take in CLSS type [`ValueRange`](https://www.nuget.org/packages/CLSS.Types.ValueRange) on .NET Standard 2.0 or higher.
 
-```
+```csharp
 using CLSS;
 
 var displayableRange = new ValueRange(0, 9999);

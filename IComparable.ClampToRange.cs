@@ -27,7 +27,7 @@ namespace CLSS
         value;
     }
 
-#if NETSTANDARD2_0_OR_GREATER
+#if NETSTANDARD2_0_OR_GREATER || NET_STANDARD_2_0
     /// <inheritdoc cref="IComparableClampToRange1.ClampToRange{T}(T, T, T)"/>
     /// <param name="range">A range struct containing the lower and upper bounds
     /// to check <paramref name="value"/> against.</param>
