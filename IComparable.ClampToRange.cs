@@ -4,7 +4,7 @@ using System;
 
 namespace CLSS
 {
-  public static partial class IComparableClampToRange1
+  public static partial class IComparableClampToRange
   {
     /// <summary>
     /// Returns the specified lower bound if the source value is lower than the
@@ -28,19 +28,16 @@ namespace CLSS
     }
 
 #if NETSTANDARD2_0_OR_GREATER || NET_STANDARD_2_0
-    /// <inheritdoc cref="IComparableClampToRange1.ClampToRange{T}(T, T, T)"/>
+    /// <inheritdoc cref="IComparableClampToRange.ClampToRange{T}(T, T, T)"/>
     /// <param name="range">A range struct containing the lower and upper bounds
     /// to check <paramref name="value"/> against.</param>
     public static T ClampToRange<T>(this T value, ValueRange<T> range)
       where T : IComparable<T>
     { return value.ClampToRange(range.Min, range.Max); }
 #endif
-  }
 
-  public static partial class IComparableClampToRange2
-  {
-    /// <inheritdoc cref="IComparableClampToRange1.ClampToRange{T}(T, T, T)"/>
-    public static T ClampToRange<T>(this T value, T min, T max)
+    /// <inheritdoc cref="IComparableClampToRange.ClampToRange{T}(T, T, T)"/>
+    public static T ClampToRangeNonGeneric<T>(this T value, T min, T max)
       where T : IComparable
     {
       return value.CompareTo(min) < 0 ? min :

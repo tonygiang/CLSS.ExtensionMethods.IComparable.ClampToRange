@@ -10,10 +10,9 @@
     <RepositoryUrl>https://github.com/tonygiang/CLSS.ExtensionMethods.IComparable.ClampToRange</RepositoryUrl>
     <PackageTags>CLSS</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Version>1.2</Version>
+    <Version>1.3</Version>
     <PackageReleaseNotes>
-      - Added language-sensitive syntax highlighting in README file.
-      - Added Unity-specific compilation directive.
+      - Renamed the version for non-generic IComparable for better compatibility with types that implement both generic and non-generic IComparable.
     </PackageReleaseNotes>
   </PropertyGroup>
 

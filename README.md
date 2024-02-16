@@ -31,7 +31,7 @@ value = value.ClampToRange(min, max);
 
 No more short stops in your code reading to decode the meanings of comparison operators. When you read `ClampToRange`, you know what it's doing.
 
-`ClampToRange` has a wider range of supported types than `System.Math.Clamp`. It supports all [`IComparable`](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable?view=net-6.0) and [`IComparable<T>`](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=net-6.0) types.
+`ClampToRange` has a wider range of supported types than `System.Math.Clamp`. It supports all [`IComparable<T>`](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable-1?view=net-6.0) types. For non-generic [`IComparable`](https://docs.microsoft.com/en-us/dotnet/api/system.icomparable?view=net-6.0) types, the equivalent method provided by this package is `ClampToRangeNonGeneric`.
 
 ```csharp
 using CLSS;
